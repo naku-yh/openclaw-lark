@@ -1,18 +1,21 @@
 {
   "name": "@larksuite/openclaw-lark",
-  "version": "2026.7.9",
+  "version": "2026.7.9-fork1",
   "description": "OpenClaw Lark/Feishu channel plugin",
   "type": "module",
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/index.d.mts",
-        "default": "./dist/index.mjs"
-      }
+      "types": "./dist/index.d.cts",
+      "import": "./dist/index.cjs",
+      "default": "./dist/index.cjs"
+    },
+    "./secret-contract-api": {
+      "types": "./dist/secret-contract-api.d.cts",
+      "default": "./dist/secret-contract-api.cjs"
     }
   },
-  "main": "./dist/index.mjs",
-  "types": "./dist/index.d.mts",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.cts",
   "bin": {
     "openclaw-lark": "bin/openclaw-lark.js"
   },
@@ -75,7 +78,7 @@
   },
   "openclaw": {
     "extensions": [
-      "./dist/index.mjs"
+      "./dist/index.cjs"
     ],
     "channel": {
       "id": "openclaw-lark",
