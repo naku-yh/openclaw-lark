@@ -2,7 +2,7 @@ Object.defineProperties(exports, {
 	__esModule: { value: true },
 	[Symbol.toStringTag]: { value: "Module" }
 });
-const require_monitor = require("./monitor-kc7lQ2TE.cjs");
+const require_monitor = require("./monitor-DQXz0h9T.cjs");
 let openclaw_plugin_sdk_core = require("openclaw/plugin-sdk/core");
 let openclaw_plugin_sdk_account_id = require("openclaw/plugin-sdk/account-id");
 let openclaw_plugin_sdk_channel_status = require("openclaw/plugin-sdk/channel-status");
@@ -1429,7 +1429,7 @@ const feishuPlugin = {
 	},
 	gateway: {
 		startAccount: async (ctx) => {
-			const { monitorFeishuProvider } = await Promise.resolve().then(() => require("./monitor-kc7lQ2TE.cjs")).then((n) => n.monitor_exports);
+			const { monitorFeishuProvider } = await Promise.resolve().then(() => require("./monitor-DQXz0h9T.cjs")).then((n) => n.monitor_exports);
 			const account = require_monitor.getLarkAccount(ctx.cfg, ctx.accountId);
 			const port = account.config?.webhookPort ?? null;
 			ctx.setStatus({

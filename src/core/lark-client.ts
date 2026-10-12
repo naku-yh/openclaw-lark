@@ -15,6 +15,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import * as Lark from '@larksuiteoapi/node-sdk';
+import { loadConfig as loadLiveOpenClawConfig } from 'openclaw/plugin-sdk/config-runtime';
 
 import type { ClawdbotConfig, PluginRuntime } from 'openclaw/plugin-sdk';
 import type { MessageDedup } from '../messaging/inbound/dedup';
@@ -496,7 +497,7 @@ injectLarkClient(LarkClient);
  */
 export function getResolvedConfig(fallback: ClawdbotConfig): ClawdbotConfig {
   try {
-    const live = LarkClient.runtime.config.loadConfig() as ClawdbotConfig;
+    const live = loadLiveOpenClawConfig() as ClawdbotConfig;
     // loadConfig() may return {} (empty config) when runtimeConfigSnapshot
     // has been cleared (e.g. after writeConfigFile, secrets teardown, or
     // concurrent cron race conditions in isolated sessions).  In that case

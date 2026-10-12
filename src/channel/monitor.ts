@@ -10,6 +10,7 @@
  */
 
 import type { ClawdbotConfig, RuntimeEnv } from 'openclaw/plugin-sdk';
+import { loadConfig as loadLiveOpenClawConfig } from 'openclaw/plugin-sdk/config-runtime';
 import type { HistoryEntry } from 'openclaw/plugin-sdk/reply-history';
 import { getEnabledLarkAccounts, getLarkAccount } from '../core/accounts';
 import { LarkClient } from '../core/lark-client';
@@ -83,7 +84,11 @@ async function monitorSingleAccount(params: {
 
   const ctx: MonitorContext = {
     get cfg() {
-      return LarkClient.runtime.config.loadConfig();
+      try {
+        return loadLiveOpenClawConfig();
+      } catch {
+        return (runtime as unknown as { config?: unknown }).config ?? {};
+      }
     },
     lark,
     accountId,
