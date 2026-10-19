@@ -1,5 +1,5 @@
 Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
-require("./monitor-DQXz0h9T.cjs");
+require("./monitor-DeFnw3qi.cjs");
 let openclaw_plugin_sdk_channel_secret_basic_runtime = require("openclaw/plugin-sdk/channel-secret-basic-runtime");
 //#region secret-contract-api.ts
 /**

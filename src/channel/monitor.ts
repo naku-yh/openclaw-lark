@@ -10,7 +10,7 @@
  */
 
 import type { ClawdbotConfig, RuntimeEnv } from 'openclaw/plugin-sdk';
-import { loadConfig as loadLiveOpenClawConfig } from 'openclaw/plugin-sdk/config-runtime';
+import { getRuntimeConfig as loadLiveOpenClawConfig } from 'openclaw/plugin-sdk/runtime-config-snapshot';
 import type { HistoryEntry } from 'openclaw/plugin-sdk/reply-history';
 import { getEnabledLarkAccounts, getLarkAccount } from '../core/accounts';
 import { LarkClient } from '../core/lark-client';

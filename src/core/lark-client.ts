@@ -15,7 +15,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import * as Lark from '@larksuiteoapi/node-sdk';
-import { loadConfig as loadLiveOpenClawConfig } from 'openclaw/plugin-sdk/config-runtime';
+import { getRuntimeConfig as loadLiveOpenClawConfig } from 'openclaw/plugin-sdk/runtime-config-snapshot';
 
 import type { ClawdbotConfig, PluginRuntime } from 'openclaw/plugin-sdk';
 import type { MessageDedup } from '../messaging/inbound/dedup';
